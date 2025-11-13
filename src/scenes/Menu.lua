@@ -1,4 +1,4 @@
--- GAME_NAME_HERE
+-- Ultimate Tic-Tac-Toe
 -- License: MIT
 -- Copyright (c) 2025 Jericho Crosby (Chalwk)
 
@@ -210,7 +210,7 @@ local function drawHelpOverlay(self)
     -- Help text
     lg.setColor(1, 1, 1)
     self.fonts:setFont("mediumFont")
-    lg.printf("GAME_NAME_HERE - HOW TO PLAY", boxX, boxY + 25, box.W, "center")
+    lg.printf("Ultimate Tic-Tac-Toe - HOW TO PLAY", boxX, boxY + 25, box.W, "center")
 
     self.fonts:setFont("smallFont")
     for i, line in ipairs(HELP_TEXT) do
@@ -351,7 +351,7 @@ function Menu:draw(state)
     -- Footer
     lg.setColor(1, 1, 1, 0.6)
     self.fonts:setFont("smallFont")
-    lg.printf("© 2025 Jericho Crosby - GAME_NAME_HERE", 10, screenHeight - 30, screenWidth - 20, "right")
+    lg.printf("© 2025 Jericho Crosby - Ultimate Tic-Tac-Toe", 10, screenHeight - 30, screenWidth - 20, "right")
 end
 
 function Menu:handleClick(x, y, state)

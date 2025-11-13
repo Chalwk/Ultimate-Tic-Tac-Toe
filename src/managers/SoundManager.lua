@@ -1,4 +1,4 @@
--- GAME_NAME_HERE
+-- Ultimate Tic-Tac-Toe
 -- License: MIT
 -- Copyright (c) 2025 Jericho Crosby (Chalwk)
 
