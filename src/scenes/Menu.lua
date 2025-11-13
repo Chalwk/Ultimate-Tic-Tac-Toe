@@ -7,21 +7,21 @@ local ipairs, sin = ipairs, math.sin
 
 local BUTTON_DATA = {
     MENU = {
-        { text = "PLAYER VS PLAYER", action = "start_pvp", width = 300, height = 55, color = { 0.7, 0.7, 0.7 } },
-        { text = "PLAYER VS AI", action = "start_pvc", width = 300, height = 55, color = { 0.5, 0.6, 0.9 } },
-        { text = "OPTIONS", action = "options", width = 300, height = 55, color = { 0.5, 0.6, 0.9 } },
-        { text = "QUIT", action = "quit", width = 300, height = 55, color = { 0.9, 0.4, 0.3 } }
+        { text = "PLAYER VS PLAYER", action = "start_pvp", width = 300, height = 55, color = { 0.2, 0.6, 0.8 } }, -- Blue
+        { text = "PLAYER VS AI",     action = "start_pvc", width = 300, height = 55, color = { 0.9, 0.5, 0.1 } }, -- Orange
+        { text = "OPTIONS",          action = "options",   width = 300, height = 55, color = { 0.3, 0.7, 0.4 } }, -- Green
+        { text = "QUIT",             action = "quit",      width = 300, height = 55, color = { 0.8, 0.2, 0.2 } }  -- Red
     },
     PAUSE = {
-        { text = "RESUME", action = "resume", width = 240, height = 56, color = { 0.18, 0.72, 0.35 } },
-        { text = "RESTART", action = "restart", width = 240, height = 56, color = { 0.95, 0.7, 0.18 } },
-        { text = "MAIN MENU", action = "menu", width = 240, height = 56, color = { 0.82, 0.28, 0.32 } }
+        { text = "RESUME",    action = "resume",  width = 240, height = 56, color = { 0.2, 0.7, 0.3 } }, -- Green
+        { text = "RESTART",   action = "restart", width = 240, height = 56, color = { 0.9, 0.6, 0.1 } }, -- Orange
+        { text = "MAIN MENU", action = "menu",    width = 240, height = 56, color = { 0.2, 0.5, 0.8 } }  -- Blue
     },
     OPTIONS = {
-        { text = "EASY", action = "diff easy", width = 110, height = 40, color = { 0.5, 0.9, 0.5 }, section = "difficulty" },
-        { text = "MEDIUM", action = "diff medium", width = 110, height = 40, color = { 0.9, 0.8, 0.4 }, section = "difficulty" },
-        { text = "HARD", action = "diff hard", width = 110, height = 40, color = { 0.9, 0.5, 0.4 }, section = "difficulty" },
-        { text = "RETURN TO MENU", action = "back", width = 200, height = 45, color = { 0.6, 0.6, 0.6 }, section = "navigation" }
+        { text = "EASY",           action = "diff easy",   width = 110, height = 40, color = { 0.3, 0.8, 0.3 }, section = "difficulty" }, -- Light Green
+        { text = "MEDIUM",         action = "diff medium", width = 110, height = 40, color = { 0.9, 0.7, 0.2 }, section = "difficulty" }, -- Yellow
+        { text = "HARD",           action = "diff hard",   width = 110, height = 40, color = { 0.9, 0.4, 0.3 }, section = "difficulty" }, -- Red-Orange
+        { text = "RETURN TO MENU", action = "back",        width = 200, height = 45, color = { 0.5, 0.5, 0.6 }, section = "navigation" }  -- Gray
     }
 }
 
@@ -162,7 +162,7 @@ local function drawGameTitle(self)
 
     lg.setColor(0, 0, 0, 0.5)
     lg.printf(self.title.text, -300 + 4, -fontH + 4 - offset, 600, "center")
-    lg.setColor(1, 0.7, 0.2, self.title.glow)
+    lg.setColor(0.9, 0.6, 0.1, self.title.glow)
     lg.printf(self.title.text, -300, -fontH - offset, 600, "center")
     lg.pop()
 
@@ -249,7 +249,7 @@ function Menu.new(fontManager)
 
     -- Help button (special case)
     instance.helpButton = createButton({
-        text = "?", action = "help", width = 50, height = 50, color = { 0.8, 0.6, 0.3 }
+        text = "?", action = "help", width = 50, height = 50, color = { 0.9, 0.6, 0.1 } -- Orange to match theme
     }, 10, screenHeight - 60)
 
     return instance
